@@ -20,6 +20,10 @@
 }
 
 /* 共通 */
+html, body {
+	overflow-x: hidden;
+}
+
 body {
     color: var(--black);
     font-family: var(--sans);
