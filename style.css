@@ -1,0 +1,526 @@
+@charset "UTF-8";
+
+/* 変数 */
+:root {
+    --f1: 3.25rem; /* 52px */
+    --fs1: 2.1875rem; /* 35px */
+    --f2: 1.8125rem; /* 29px */
+    --f3: 1.6875rem; /* 27px */
+    --f4: 1.5rem; /* 24px */
+    --f5: 1rem; /* 16px */
+    --f6: 0.875rem; /* 14px */
+    --serif: "Noto Serif JP", serif;
+    --sans: "Noto Sans JP", sans-serif;
+    --blue: #50D5E0;
+    --pink: #EDB0BF;
+    --black: #333;
+    --bgblue: #E9F9FA;
+    --line: #DCDCDC;
+    --myw: 1116px;
+}
+
+/* 共通 */
+body {
+    color: var(--black);
+    font-family: var(--sans);
+    line-height: 1.8;
+}
+
+.wrapper {
+    max-width: var(--myw);
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.full {
+    margin: 0 calc(50% - 50vw);
+}
+
+.wide {
+    margin-left: calc((100vw - var(--myw)) /4 * -1);
+    margin-right: calc((100vw - var(--myw)) /4 * -1);
+    max-width: none;
+    width: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.btn{
+    color: #fff;
+    background-color: var(--pink);
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease; /* スムーズな変化 */
+} 
+
+.btn:hover::before {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.contents {
+    padding: 100px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: var(--f2);
+    font-family: var(--serif);
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    width: 60px;
+    height: 2px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: var(--blue);
+}
+
+h3 {
+    font-size: var(--f3);
+    font-family: var(--sans);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    z-index: 100;
+    padding: 0 4%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--myw);
+    margin: 0 auto;
+}
+
+.logo {
+    height: 60px;
+    line-height: 1px;
+    margin: 10px 0;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo img {
+    max-height: 60px;
+    vertical-align: bottom;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 65px;
+}
+
+.sp {
+    display: none;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+}
+
+footer .logo {
+    margin-bottom: 40px;
+}
+
+footer .nav-container {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+footer .main-nav {
+    gap: 40px;
+}
+
+.sns-share {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.sns-share-icon {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    font-size: 30px;
+    color: var(--blue);
+}
+
+.copyright {
+    background-color: var(--bgblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright p {
+    font-size: var(--f6);
+    padding: 8px 0;
+}
+
+/* メイン */
+main {
+    padding-top: 80px;
+}
+
+.main-bg {
+    position: relative;
+}
+
+.main-bg img {
+    width: 100vw;
+    object-fit: cover;
+    min-height: 400px;
+}
+
+.main-bg-text {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translateX(-50%);
+}
+
+.overlay-text p {
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    background-color: #fff;
+    padding: 0 10px;
+    color: #000;
+    font-size: var(--f1);
+    font-family: var(--serif);
+    font-weight: 300;
+}
+
+/* 当院の特徴 */
+.features {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+
+.feature img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.feature p {
+    text-align: center;
+}
+
+@media screen and (max-width: 1116px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+/* 治療のポリシー */
+.policy-sec {
+    background-color: var(--bgblue);
+    margin: 0 calc(50% - 50vw);
+    padding-right: calc(50vw - 50%);
+    padding-left: calc(50vw - 50%);
+}
+
+.policy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.policy img {
+    width: 100%;
+    max-width: 300px;
+    min-width: 150px;
+    height: auto;
+}
+
+.policy-img {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.policy-text {
+    width: 65%;
+}
+
+/* お知らせ */
+.information {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.information:not(:first-of-type) {
+    padding-top: 2rem;
+}
+
+.information:not(:last-of-type) {
+    border-bottom: 1px solid var(--line);
+}
+
+.info-day {
+    width: 20%;
+}
+
+.info-day p {
+    display: inline;
+    background-color: var(--blue);
+    color: #fff;
+    padding: 0 20px;
+}
+
+.info {
+    width: 80%
+}
+
+.info h3 {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.info-nav {
+    text-align: right;
+}
+
+.info-nav span {
+    text-decoration: underline;
+}
+
+/*　　　　　　　 タブレット版 　　　　　　　*/
+@media screen and (max-width: 1000px) {
+    .wide {
+        margin: 0 calc(50% - 45vw);
+    }
+
+    header {
+        height: 155px;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .nav-container {
+        font-size: var(--f6);
+    }
+
+    footer .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 30px;
+    }
+
+    main {
+        padding-top: 155px;
+    }
+    
+    .main-bg-text {
+        position: absolute;
+        top: 30%;
+        left: 35%;
+        transform: translateX(-50%);
+    }
+    
+    .overlay-text p {
+        font-size: var(--f2);
+    }
+
+    .information {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .info-day,
+    .info {
+        width: 100%;
+    }
+}
+
+
+/* 　　　　　　　モバイル版　　　　　　　　 */
+@media screen and (max-width: 600px) {
+    .wrapper {
+        margin: 0;
+    }
+
+    h3 {
+        font-size: var(--f4);
+    }
+
+    header {
+        height: 80px;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+    
+    .nav-container {
+        position: fixed;
+        margin-top: 0;
+        top: -100%;
+        right: 0;
+        width: 100%;
+        background-color: var(--blue);
+        box-sizing: border-box;
+        transition: .3s;
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--f5);
+        color: #fff;
+        padding: 30% 0;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    .nav-container.open {
+        top: 0;
+    }
+
+    .main-nav {
+        padding: 0 0 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .sp {
+        display: block;
+    }
+
+    .menu-btn {
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .fa-xmark {
+        color: #fff;
+    }
+
+    .reservation {
+        background-color: #fff;
+        color: var(--blue);
+    }
+
+    .footer .main-nav {
+        max-width: 400px;
+    }
+
+    main {
+        padding-top: 80px;
+    }
+
+    .main-bg img {
+        height: calc(100vh - 80px);
+        object-position: 70% 0;
+    }
+
+    .main-bg-text {
+        top: 4%;
+        left: 35%;
+        transform: translateX(-50%);
+        height: 100%;
+    }
+
+    .overlay-text {
+        writing-mode: vertical-rl;
+        -webkit-writing-mode: vertical-rl;
+    }
+
+    .overlay-text p {
+        display: inline-block;
+        padding: 10px 0;
+        line-height: 1.2;
+        text-align: left;
+        margin-right: 10px;
+        font-size: var(--fs1);
+    }
+
+    .policy {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .policy-img {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .policy-text {
+        width: 100%;
+    }
+
+    .policy-text h3 {
+        text-align: center;
+    }
+}
