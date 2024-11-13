@@ -94,7 +94,7 @@ a:hover {
     padding: 100px 0;
 }
 
-h2 {
+h3 {
     text-align: center;
     font-size: var(--f2);
     font-family: var(--serif);
@@ -103,7 +103,7 @@ h2 {
     margin-bottom: 2.5rem;
 }
 
-h2::before {
+h3::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -115,7 +115,7 @@ h2::before {
     background-color: var(--blue);
 }
 
-h3 {
+h4 {
     font-size: var(--f3);
     font-family: var(--sans);
     font-weight: 500;
@@ -212,7 +212,7 @@ footer .main-nav {
     padding: 8px 0;
 }
 
-/* メイン */
+/* トップページ */
 main {
     padding-top: 80px;
 }
@@ -234,8 +234,7 @@ main {
     transform: translateX(-50%);
 }
 
-.overlay-text p {
-    display: inline;
+.overlay-text .overlay-text-h2 {
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     background-color: #fff;
@@ -322,7 +321,7 @@ main {
     width: 80%
 }
 
-.info h3 {
+.info h4 {
     font-size: 1.125rem;
     line-height: 1.6;
     margin-bottom: 0.5rem;
@@ -334,6 +333,11 @@ main {
 
 .info-nav span {
     text-decoration: underline;
+}
+
+/* 診療案内 */
+.menu-bg img {
+    height: 350px;
 }
 
 /*　　　　　　　 タブレット版 　　　　　　　*/
@@ -372,7 +376,7 @@ main {
         transform: translateX(-50%);
     }
     
-    .overlay-text p {
+    .overlay-text .overlay-text-h2 {
         font-size: var(--f2);
     }
 
@@ -403,7 +407,7 @@ main {
         margin: 0;
     }
 
-    h3 {
+    h4 {
         font-size: var(--f4);
     }
 
@@ -479,7 +483,6 @@ main {
 
     .main-bg img {
         height: calc(100vh - 80px);
-        height: calc(100dvh - 80px);
         object-position: 70% 0;
     }
 
@@ -495,7 +498,7 @@ main {
         -webkit-writing-mode: vertical-rl;
     }
 
-    .overlay-text p {
+    .overlay-text .overlay-text-h2 {
         display: inline-block;
         padding: 10px 0;
         line-height: 1.2;
@@ -518,7 +521,7 @@ main {
         width: 100%;
     }
 
-    .policy-text h3 {
+    .policy-text h4 {
         text-align: center;
     }
 }
