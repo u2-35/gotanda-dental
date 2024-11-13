@@ -17,12 +17,10 @@
     --bgblue: #E9F9FA;
     --line: #DCDCDC;
     --myw: 1116px;
+    --vw: 1vw;
 }
 
 /* 共通 */
-html, body {
-	overflow-x: hidden;
-}
 
 body {
     color: var(--black);
@@ -39,12 +37,12 @@ body {
 }
 
 .full {
-    margin: 0 calc(50% - 50vw);
+    margin: 0 calc(50% - var(--vw)*50);
 }
 
 .wide {
-    margin-left: calc((100vw - var(--myw)) /4 * -1);
-    margin-right: calc((100vw - var(--myw)) /4 * -1);
+    margin-left: calc((var(--vw) * 100 - var(--myw) - 40px) /2 * -1);
+    margin-right: calc((var(--vw) * 100 - var(--myw) - 40px) /2 * -1);
     max-width: none;
     width: auto;
 }
@@ -129,28 +127,21 @@ h3 {
 header {
     background-color: #fff;
     position: fixed;
-    width: 100vw;
+    width: calc(var(--vw) * 100);
     height: 80px;
     top: 0;
     z-index: 100;
-    padding: 0 4%;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--myw);
-    margin: 0 auto;
 }
 
 .logo {
     line-height: 1px;
     margin: 10px 0;
-}
-
-.logo a {
-    display: block;
 }
 
 .logo img {
@@ -229,7 +220,7 @@ main {
 }
 
 .main-bg img {
-    width: 100vw;
+    width: calc(var(--vw) * 100);
     object-fit: cover;
     min-height: 400px;
 }
@@ -270,23 +261,12 @@ main {
     text-align: center;
 }
 
-@media screen and (max-width: 1116px) {
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature:not(:last-child) {
-        margin-bottom: 30px;
-    }
-}
-
 /* 治療のポリシー */
 .policy-sec {
     background-color: var(--bgblue);
-    margin: 0 calc(50% - 50vw);
-    padding-right: calc(50vw - 50%);
-    padding-left: calc(50vw - 50%);
+    margin: 0 calc(50% - var(--vw)*100/2);
+    padding-right: calc(var(--vw)*100/2 - 50%);
+    padding-left: calc(var(--vw)*100/2 - 50%);
 }
 
 .policy {
@@ -355,7 +335,7 @@ main {
 }
 
 /*　　　　　　　 タブレット版 　　　　　　　*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1116px) {
     .wide {
         margin: 0 calc(50% - 45vw);
     }
@@ -376,7 +356,7 @@ main {
     footer .main-nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px 30px;
+        gap: 10px 25px;
     }
 
     main {
@@ -392,6 +372,15 @@ main {
     
     .overlay-text p {
         font-size: var(--f2);
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature:not(:last-child) {
+        margin-bottom: 30px;
     }
 
     .information {
@@ -424,7 +413,7 @@ main {
         flex-direction: row;
     }
     
-    .nav-container {
+    .header .nav-container {
         position: fixed;
         margin-top: 0;
         top: -100%;
@@ -442,11 +431,11 @@ main {
         justify-content: center;
     }
 
-    .nav-container.open {
+    .header .nav-container.open {
         top: 0;
     }
 
-    .main-nav {
+    .header .main-nav {
         padding: 0 0 0;
         width: 100%;
         height: 100%;
@@ -488,6 +477,7 @@ main {
 
     .main-bg img {
         height: calc(100vh - 80px);
+        height: calc(100dvh - 80px);
         object-position: 70% 0;
     }
 
