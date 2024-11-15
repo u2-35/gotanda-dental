@@ -376,14 +376,12 @@ main {
     top: 30%;
     left: 35%;
     transform: translateX(-50%);
+    color: #000;
 }
 
-.overlay-text .overlay-text-h2 {
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+.highlight {
     background-color: #fff;
     padding: 0 10px;
-    color: #000;
     font-size: var(--f1);
     font-family: var(--serif);
     font-weight: 300;
@@ -520,14 +518,7 @@ main {
         padding-top: 155px;
     }
     
-    .main-bg-text {
-        position: absolute;
-        top: 30%;
-        left: 35%;
-        transform: translateX(-50%);
-    }
-    
-    .overlay-text .overlay-text-h2 {
+    .highlight {
         font-size: var(--f2);
     }
 
@@ -664,22 +655,18 @@ main {
 
     .main-bg-text {
         top: 4%;
-        left: 25%;
-        transform: translateX(-50%);
-        height: 100%;
+        left: 20%;
     }
 
     .overlay-text {
         writing-mode: vertical-rl;
-        -webkit-writing-mode: vertical-rl;
     }
 
-    .overlay-text .overlay-text-h2 {
+    .highlight {
         display: inline-block;
-        padding: 10px 0;
         line-height: 1.2;
-        text-align: left;
         margin-right: 10px;
+        padding: 10px 0;
         font-size: var(--fs1);
     }
 
@@ -707,3 +694,4 @@ main {
     }
 
 }
+
