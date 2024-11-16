@@ -655,7 +655,7 @@ main {
 
     .main-bg-text {
         top: 4%;
-        left: 20%;
+        left: calc(50% - 25%);
     }
 
     .overlay-text {
