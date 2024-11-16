@@ -649,13 +649,17 @@ main {
     }
 
     .main-bg img {
-        height: calc(100vh - 80px);
+        height: calc(100svh - 80px);
         object-position: 70% 0;
     }
 
     .main-bg-text {
         top: 4%;
         left: calc(50% - 25%);
+    }
+
+    .iOS .main-bg-text {
+        left: calc(50% - 35%);
     }
 
     .overlay-text {
