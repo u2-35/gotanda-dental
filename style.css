@@ -331,10 +331,14 @@ footer .main-nav {
     padding-left: calc(var(--vw)*100/2 - 50%);
 }
 
-/* 写真・文章のコンテナ */
+/* 画像・テキストのコンテナ */
 .flex-container {
     display: flex;
     justify-content: space-between;
+}
+
+.flex-container.reverse {
+    flex-direction: row-reverse;
 }
 
 .flex-container img {
@@ -350,10 +354,6 @@ footer .main-nav {
 
 .flex-text {
     width: 65%;
-}
-
-.flex-container.reverse {
-    flex-direction: row-reverse;
 }
 
 /* トップページ */
@@ -511,7 +511,8 @@ main {
     footer .main-nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px 25px;
+        gap: 0 25px;
+        width: 520px;
     }
 
     main {
