@@ -371,20 +371,25 @@ main {
 
 .main-bg {
     position: relative;
+    display: grid;
+    grid-template-columns: 35% auto;
+    grid-template-rows: 30% auto;
 }
 
 .main-bg img {
     width: calc(var(--vw) * 100);
     object-fit: cover;
     min-height: 400px;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
 }
 
 .main-bg-text {
-    position: absolute;
-    top: 30%;
-    left: 35%;
-    transform: translateX(-50%);
-    color: #000;
+    grid-row: 2; /* 2行目 */
+    grid-column: 2; /* 2列目 */
+    align-self: start; /* 上端揃え */
+    justify-self: start; /* 左端揃え */
+    transform: translateX(-50%); /* テキスト幅50%分を左に移動 */
 }
 
 .highlight {
@@ -711,18 +716,23 @@ main {
         padding-top: 0;
     }
 
+    .main-bg {
+        grid-template-rows: 4% auto; /* 4:96 */
+        grid-template-columns: 50% auto; /* 50:50 */
+    }
+
     .main-bg img {
         height: calc(100svh - 80px);
         object-position: 70% 0;
     }
 
     .main-bg-text {
-        top: 4%;
-        left: calc(50% - 25%);
-    }
-
-    .iOS .main-bg-text {
-        left: calc(50% - 35%);
+        grid-row: 2; /* 2列目 */
+        grid-column: 1; /* 1列目 */
+        justify-self: center; /* 中央揃え */
+        transform: none;
+        display: flex;
+        justify-content: center;
     }
 
     .overlay-text {
