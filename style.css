@@ -15,6 +15,8 @@
     --pink: #EDB0BF;
     --black: #333;
     --bgblue: #E9F9FA;
+    --lightblue: #F5FDFE;
+    --cyan: #6DB1B7;
     --line: #DCDCDC;
     --myw: 1116px;
     --vw: 1vw;
@@ -121,10 +123,6 @@ h4 {
     font-family: var(--sans);
     font-weight: 500;
     margin-bottom: 1rem;
-}
-
-td, th {
-    padding: 0 1rem 1rem 0;
 }
 
 /* ヘッダー */
@@ -519,6 +517,14 @@ main {
     background-image: none;
 }
 
+.career th {
+    padding: 0 1rem 1rem 0;
+}
+
+.career td {
+    padding-bottom: 1rem;
+}
+
 /* アクセス・診療案内 */
 .access .flex-text p {
     margin-bottom: 2.5rem;
@@ -527,7 +533,32 @@ main {
 .map iframe {
     width: 100%;
     aspect-ratio: 16/9;
-    max-height: 400px;
+    max-height: 600px;
+    margin-top: 30px;
+}
+
+.consultation-hour table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.consultation-hour th {
+    background-color: var(--bgblue);
+}
+
+.consultation-hour td {
+    background-color: var(--lightblue);
+    width: 10%;
+    color: var(--cyan);
+    font-weight: 500;
+}
+
+.consultation-hour th,
+.consultation-hour td {
+    text-align: center;
+    border: 3px solid var(--bgblue);
+    padding: 1rem;
 }
 
 /*　　　　　　　 タブレット版 　　　　　　　*/
@@ -760,6 +791,10 @@ main {
         width: 100%;
         align-items: center;
     }
+
+    .flex-img p {
+        text-align: center;
+    }
     
     .flex-text {
         width: 100%;
@@ -768,6 +803,25 @@ main {
 
     .flex-text h4 {
         text-align: center;
+    }
+
+    .career {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .consultation-hour table {
+        writing-mode:vertical-lr
+    }
+    
+    .consultation-hour th,
+    .consultation-hour td {
+        writing-mode:horizontal-tb;
+        width: auto;
+    }
+
+    .sp-hour {
+        font-size: 0;
     }
 
 }
