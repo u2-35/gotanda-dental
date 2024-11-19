@@ -811,8 +811,8 @@ main {
         margin: 10px 0;
     }
 
-    .footer .main-nav {
-        max-width: 400px;
+    .footer .nav-container {
+        display: none;
     }
 
     main {
