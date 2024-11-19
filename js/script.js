@@ -13,13 +13,6 @@ $(function () {
     });
     // 画面を、読み込んだ時orサイズを変えた時  →  関数vwが動作する
 
-////////// 表示がiOSかの判断
-    if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0) {
-        $('body').addClass('iOS');
-    }
-    // iPhoneまたはiPadで表示しているとき、bodyにiOSクラスを追加
-    // （iPad AirやiPad Proだと追加されないので注意）
-
 ////////// トップへ戻るボタンの設定
     var backTop = $('.back-top');
 
@@ -49,13 +42,6 @@ $(function () {
             // 2. メニューボタンを×ではなくする
             $('.menu-btn').find('i').addClass('fa-bars');
             // 3. メニューボタンを≡にする
-
-            $('main').click(function(){
-            // メニューが開いているときにメニュー外をクリックしたら、上と同様の動きをする
-                $('.nav-container').removeClass('nav-open');
-                $('.menu-btn').find('i').removeClass('fa-xmark');
-                $('.menu-btn').find('i').addClass('fa-bars');
-                });
             
         }else{
         // nav-containerがopenクラスを持っていない（＝メニューが開いていない）ときは、
@@ -66,7 +52,17 @@ $(function () {
             $('.menu-btn').find('i').addClass('fa-xmark');
             // 3. メニューボタンを×にする
         }
+    });
 
+    $(document).click(function(e) {
+        // クリックした場所がメニューボタンでもメニューそのものでもない場合
+        if (!$(e.target).closest('.menu-btn, .nav-container').length) {
+            if ($('.nav-container').hasClass('nav-open')) {
+                // メニューを閉じる
+                $('.nav-container').removeClass('nav-open');
+                $('.menu-btn').find('i').removeClass('fa-xmark').addClass('fa-bars');
+            }
+        }
     });
 
     ////////// スムーススクロール
@@ -81,5 +77,12 @@ $(function () {
         $('html,body').animate({scrollTop: target}, 500, 'swing');
         return false;
     });
+
+    ////////// お知らせの取得
+    $('#news-container').load('news.html .news-list article:nth-of-type(-n+3)', function(response, status, xhr) {
+        if (status === "error") {
+          $('#news-container').html("<p>お知らせを読み込めませんでした。</p>");
+        }
+      });
 
 });
