@@ -169,8 +169,11 @@ header {
     align-items: center;
     justify-content: space-around;
     list-style-type: none;
-    width: 680px;
     height: 100%;
+}
+
+.header .main-nav {
+    width: 680px;
 }
 
 .main-nav li {
